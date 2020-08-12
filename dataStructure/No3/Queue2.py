@@ -1,5 +1,5 @@
-# 1차원 배열 queue[]를 이용한 큐의 구현
-# pop : queue[0]에 있는 원소 제거
+# 변수 front를 사용하여 큐의 첫번째 위치를 항상 유지
+# pop : queue[front]에 있는 원소 제거
 
 class Queue:
 
@@ -19,7 +19,10 @@ class Queue:
             return False
 
     def Front(self):
-        return self.queue[0]
+        return self.queue[self.front]
+
+    def Rear(self):
+        return self.queue[self.rear - 1]
 
     def Push(self, item):
         if(self.capacity > self.rear + 1):
@@ -31,5 +34,17 @@ class Queue:
             self.rear += 1
 
     def Pop(self):
-        if (self.isEmpty() == False):
+        if(self.isEmpty() == False):
             self.front += 1
+
+queue = Queue(20)
+print(queue.isEmpty())
+queue.Push(2)
+print(queue.Front())
+queue.Push(3)
+queue.Push(4)
+queue.Push(5)
+queue.Push(6)
+queue.Pop()
+print(queue.Rear())
+print(queue.Front())
