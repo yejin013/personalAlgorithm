@@ -11,13 +11,13 @@ class Stack:
             return False
 
     def Top(self):
-        return self.stack[0]
+        return self.stack[-1]
 
     def Push(self, item):
         self.stack.append(item)
 
     def Pop(self):
-        return self.stack.pop(0)
+        return self.stack.pop()
 
 stack = Stack(20)
 print(stack.isEmpty())
