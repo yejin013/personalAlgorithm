@@ -1,7 +1,6 @@
 # 우선순위 큐 : 가장 값이 큰 원소부터 제거
 class MaxPQ:
     pq = []
-    size = 0
 
     def isEmpty(self):
         if len(self.pq) == 0:
